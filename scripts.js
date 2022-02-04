@@ -52,9 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     divHeader.appendChild(h6);
 
-    let colorsArry = ["blue", "purple", "green", "red", "orange", "yellow", "pink", "black"];
-
-    
     function changeColor() {
        let randomColor = colorsArry[Math.floor(Math.random() * colorsArry.length)];
        return randomColor;
@@ -96,26 +93,24 @@ document.addEventListener("DOMContentLoaded", function () {
     btn.appendChild(btnText);
     divHeader.appendChild(btn);
 
+    let ul = document.createElement("ul");
     
-    let list = document.createElement("list");
+    divHeader.appendChild(ul);
 
-    divHeader.appendChild("list")
-    
-    
-    let itemNum = 1;
-
-    function btnClicked() {
+    let itemNum = 1    
+    btn.addEventListener('click', function () {
+        console.log("clicked");
+        
+        
         let li = document.createElement("li");
-        
-        let liText = document.createTextNode("This is list item" + (itemNum));
-        
+
+        let liText = document.createTextNode(`This is list item ${itemNum}`);
 
         li.appendChild(liText);
-
         ul.appendChild(li);
-        
-        itemNum = (itemNum +1);
 
+        itemNum++;
+        
         li.addEventListener('click', function() {
             let randomColor = changeColor();
             li.style.color = randomColor;
@@ -124,13 +119,8 @@ document.addEventListener("DOMContentLoaded", function () {
         li.addEventListener('dblclick', function() {
             this.remove();
         });
-    }
 
-    btn.addEventListener('click', btnClicked);
+    });
     
-   ;
-
-
-
 })
 
