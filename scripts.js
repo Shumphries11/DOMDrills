@@ -52,6 +52,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     divHeader.appendChild(h6);
 
+    let colorsArry = ['orange', 'purple', 'green', 'red', 'black', 'yellow', 'pink', 'blue'];
+
     function changeColor() {
        let randomColor = colorsArry[Math.floor(Math.random() * colorsArry.length)];
        return randomColor;
